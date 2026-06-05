@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wholesale Model Predictor</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar" role="banner">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">ML</div>
+        <div>
+          <h1 id="site-title">Wholesale Predictor</h1>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="board">
+        <article class="info-card">
+          <span class="eyebrow">Model summary</span>
+          <h2>Professional predictive interface.</h2>
+          <p>
+            Enter values for each input feature and receive a regression prediction.
+            This interface is built for clarity, responsiveness, and fast decision-making.
+          </p>
+
+          <div class="stats-grid">
+            <div class="stat-card">
+              <p>Features</p>
+              <strong>5</strong>
+            </div>
+            <div class="stat-card">
+              <p>Model</p>
+              <strong>DecisionTree Regressor</strong>
+            </div>
+            <div class="stat-card">
+              <p>Format</p>
+              <strong>Numeric inputs</strong>
+            </div>
+          </div>
+        </article>
+
+        <article class="predictor-card" id="predict">
+          <div class="panel-header compact">
+            <div>
+              <h2>Predict now</h2>
+            </div>
+          </div>
+
+          <form id="predict-form" class="predict-form" aria-labelledby="predict">
+            <div class="field-grid">
+              <label>
+                <span>Fresh</span>
+                <input name="Fresh" type="number" step="any" required placeholder="e.g. 500" />
+              </label>
+              <label>
+                <span>Grocery</span>
+                <input name="Grocery" type="number" step="any" required placeholder="e.g. 200" />
+              </label>
+              <label>
+                <span>Frozen</span>
+                <input name="Frozen" type="number" step="any" required placeholder="e.g. 100" />
+              </label>
+              <label>
+                <span>Detergents_Paper</span>
+                <input name="Detergents_Paper" type="number" step="any" required placeholder="e.g. 150" />
+              </label>
+              <label>
+                <span>Delicassen</span>
+                <input name="Delicassen" type="number" step="any" required placeholder="e.g. 75" />
+              </label>
+            </div>
+
+            <div class="action-row">
+              <button type="submit" class="btn btn-primary" id="predict-btn">Predict</button>
+            </div>
+
+            <div class="result-block">
+              <div class="result-panel" id="result-card" hidden role="status" aria-live="polite">
+                <p class="result-label">Prediction</p>
+                <strong id="prediction-value">0.00</strong>
+              </div>
+            </div>
+          </form>
+
+          <div class="help-panel" id="help">
+            <p><strong>How it works</strong></p>
+            <p>Each input value is sent to the backend model, which returns a regression score based on the trained tree.</p>
+          </div>
+        </article>
+      </section>
+    </main>
+
+        <footer class="footer">
+        <p>&copy; 2026 Wholesale Predictor.</p>
+      </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
